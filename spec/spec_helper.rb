@@ -8,7 +8,7 @@ Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each { |file| require file }
 
 RSpec.configure do |config|
   config.after(:each) do
-    # Board.all().each { |board| board.destroy }
+    Board.all().each { |board| board.destroy }
     #
     # Game.all().each { |game| game.destroy }
 

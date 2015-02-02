@@ -1,6 +1,7 @@
 require('spec_helper')
 describe Space do
   it{ should belong_to(:player)}
+  it{ should belong_to(:board)}
 
   describe("#markby")
   it("lets the player mark the space") do
