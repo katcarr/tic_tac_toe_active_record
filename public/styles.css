@@ -1,0 +1,105 @@
+.box_top_left{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left_style: none;
+  border-top_style: none;
+  border-color: black;
+  font-size: 20pt;
+  max-width;
+  .center-block();
+}
+
+.box_top_middle{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left_style: solid;
+  border-top_style: none;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_top_right{
+  height : 7em;
+  border-width: large;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left_style: solid;
+  border-top_style: none;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_middle_left{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left_style: none;
+  border-top_style: none;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_middle{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left_style: solid;
+  border-top_style: solid;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_middle_right{
+  height : 7em;
+  border-width: large;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left_style: solid;
+  border-top_style: solid;
+  border-color: black;
+  font-size: 20pt;
+}
+.box_bottom_left{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left_style: none;
+  border-top_style: none;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_bottom_middle{
+  height : 7em;
+  border-width: large;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left_style: solid;
+  border-top_style: solid;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.box_bottom_right{
+  height : 7em;
+  border-width: large;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left_style: solid;
+  border-top_style: solid;
+  border-color: black;
+  font-size: 20pt;
+}
+
+.row .square {
+  height: 190px;
+  padding: 70px;
+  text-align: center;
+}
