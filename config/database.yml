@@ -1,7 +1,9 @@
 development:
   adapter: postgresql
   database: tic_tac_toe_development
+  template: template0
 
 test:
   adapter: postgresql
   database: tic_tac_toe_test
+  template: template0

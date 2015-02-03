@@ -2,16 +2,17 @@ require 'spec_helper'
 
 describe Game do
   it {should have_many(:players)}
+  it { should have_one(:board)}
 
-  # it("should create a X player and O player when initialized") do
-  #   test_game = Game.create()
-  #   expect(test_game.players.first.mark).to(eq("X"))
-  # end
+  it("should create a X player and O player when initialized") do
+    test_game = Game.create()
+    expect(test_game.players.first.mark).to(eq("X"))
+  end
 
-  # it("should create a board when initialized") do
-  #   test_game = Game.create()
-  #   expect(test_game.board).to(be_an_instance_of(Board))
-  # end
+  it("should create a board when initialized") do
+    test_game = Game.create()
+    expect(test_game.board).to(be_an_instance_of(Board))
+  end
 
   # describe 'win?' do
   #   it("returns true if there is three Xs or Os in a row") do
@@ -22,11 +23,10 @@ describe Game do
 
   describe '#play' do
     it("marks the appropriate space with the players turn") do
-binding.pry()
       game = Game.create()
       game.play(1, 2)
-binding.pry()
-      expect(game.board.spaces[1].player.mark).to eq("X")
+      this_space = game.board.spaces.find_by({x_coordinate: 1, y_coordinate: 2})
+      expect(this_space.player.mark).to eq("X")
     end
   end
 

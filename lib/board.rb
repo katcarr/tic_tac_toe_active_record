@@ -1,7 +1,8 @@
 class Board<ActiveRecord::Base
   has_many(:spaces)
+  belongs_to(:game)
 
-  after_initialize do
+  after_create do
 
     3.times do |x|
       3.times do |y|

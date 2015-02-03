@@ -8,6 +8,6 @@ describe Space do
     space = Space.create({:x_coordinate => 1, :y_coordinate => 1})
     player = Player.create({:mark => "x"})
     space.markby(player)
-    expect(space.player).to(eq player)
+    expect(space.player).to(eq(player))
   end
 end
