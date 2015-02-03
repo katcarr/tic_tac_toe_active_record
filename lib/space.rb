@@ -3,7 +3,7 @@ class Space<ActiveRecord::Base
   belongs_to(:board)
 
   define_method(:markby) do |player|
-   self.player_id = player.id
+    self.update(player_id: player.id)
   end
 
 end

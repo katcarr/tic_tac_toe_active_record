@@ -1,6 +1,6 @@
 class Board<ActiveRecord::Base
   has_many(:spaces)
-  
+
   after_initialize do
 
     3.times do |x|
