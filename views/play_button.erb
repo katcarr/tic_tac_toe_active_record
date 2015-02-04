@@ -3,4 +3,6 @@
     <input type="hidden" name="space_id" value="<%= space.id %>">
     <button type="submit">Mark</button>
   </form>
+  <% else %>
+  <%= space.player.mark %>
 <% end %>
