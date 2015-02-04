@@ -14,12 +14,25 @@ describe Game do
     expect(test_game.board).to(be_an_instance_of(Board))
   end
 
-  # describe 'win?' do
-  #   it("returns true if there is three Xs or Os in a row") do
-  #     test_game = Game.create
-  #       expect(test_game.board.spaces[0, 1, 2]).to eq(true)
-  #   end
-  # end
+  describe 'win?' do
+    it("returns true if there are three Xs or Os in a row") do
+      test_game = Game.create
+      test_game.play(1, 3)
+      test_game.reload()
+      test_game.play(2, 1)
+      test_game.reload()
+      test_game.play(1, 1)
+      test_game.reload()
+      test_game.play(3, 3)
+      test_game.reload()
+      expect(test_game.play(1, 2)).to eq(true)
+    end
+
+    it("returns false if there is no win") do
+      test_game = Game.create
+      expect(test_game.play(1, 2)).to eq(false)
+    end
+  end
 
   describe '#play' do
     it("marks the appropriate space with the players turn") do
