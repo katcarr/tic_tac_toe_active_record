@@ -6,37 +6,55 @@
 <div class="row">
   <div class="col-md-4 col-sm-4 box_top_left square">
     <div>
-      <form action="/top_left">
-        <input type="checkbox">
-      </form>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 3).first}) %>
     </div>
   </div>
   <div class="col-md-4 col-sm-4 box_top_middle square">
-      x
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 3).first}) %>
+    </div>
   </div>
   <div class="col-md-4 col-sm-4 box_top_right square">
-
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 3).first}) %>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-md-4 col-sm-4 box_middle_left square">
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 2).first}) %>
+    </div>
 
   </div>
   <div class="col-md-4 col-sm-4 box_middle square">
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 2).first}) %>
+    </div>
 
   </div>
   <div class="col-md-4 col-sm-4 box_middle_right square">
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 2).first}) %>
+    </div>
 
   </div>
 </div>
 <div class="row">
   <div class="col-md-4 col-sm-4 box_bottom_left square">
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 1).first}) %>
+    </div>
 
   </div>
   <div class="col-md-4 col-sm-4 box_bottom_middle square">
-      <p>x</p>
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 1).first}) %>
+    </div>
   </div>
   <div class="col-md-4 col-sm-4 box_bottom_right square">
-      <p>x</p>
+    <div>
+      <%= erb(:play_button, :locals => { :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 1).first}) %>
+    </div>
   </div>
 </div>

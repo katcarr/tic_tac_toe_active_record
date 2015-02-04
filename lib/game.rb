@@ -9,7 +9,7 @@ class Game <ActiveRecord::Base
 
     board = self.create_board(game_id: self.id)
     self.update(board_id: board.id)
-    self.update(turn: "X")
+    self.update(turn: "X", plays: 0)
 
   end
 
@@ -28,15 +28,22 @@ class Game <ActiveRecord::Base
     else
       player = Player.where({mark: "O"}).first
     end
+
     Space.where({x_coordinate: x, y_coordinate: y}).first.markby(player)
 
-    if self.win?
-      return true
-    else
-      self.turner()
 
-      return false
+    if self.plays >= 4
+
+      if self.win?
+        return true
+      end
+
     end
+
+    self.update(plays: self.plays + 1)
+    self.turner()
+    return false
+
   end
 
   def win?

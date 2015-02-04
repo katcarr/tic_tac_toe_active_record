@@ -1,0 +1,6 @@
+<% if space.player_id == nil %>
+  <form action="/play" method="post">
+    <input type="hidden" name="space_id" value="<%= space.id %>">
+    <button type="submit">Mark</button>
+  </form>
+<% end %>
