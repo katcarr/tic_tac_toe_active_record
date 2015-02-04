@@ -18,13 +18,9 @@ describe Game do
     it("returns true if there are three Xs or Os in a row") do
       test_game = Game.create
       test_game.play(1, 3)
-      test_game.reload()
       test_game.play(2, 1)
-      test_game.reload()
       test_game.play(1, 1)
-      test_game.reload()
       test_game.play(3, 3)
-      test_game.reload()
       expect(test_game.play(1, 2)).to eq(true)
     end
 
@@ -32,6 +28,27 @@ describe Game do
       test_game = Game.create
       expect(test_game.play(1, 2)).to eq(false)
     end
+
+    it("returns true for a diagonal win") do
+      test_game = Game.create
+      test_game.play(1, 2)
+      test_game.play(1, 3)
+      test_game.play(2, 3)
+      test_game.play(2, 2)
+      test_game.play(3, 2)
+      expect(test_game.play(3, 1)).to eq(true)
+    end
+
+    it("returns true for a row win") do
+      test_game = Game.create
+      test_game.play(2, 2)
+      test_game.play(1, 3)
+      test_game.play(2, 1)
+      test_game.play(2, 3)
+      test_game.play(3, 2)
+      expect(test_game.play(3, 3)).to eq(true)
+    end
+
   end
 
   describe '#play' do
