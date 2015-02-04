@@ -22,3 +22,20 @@ post '/play' do
   game.play(space.x_coordinate, space.y_coordinate)
   redirect '/'
 end
+
+
+post '/clear' do
+  Game.all().each do |game|
+    game.destroy()
+  end
+  Board.all() do |board|
+    board.destroy
+  end
+  Space.all().each do |space|
+    space.destroy()
+  end
+  Player.all().each do |player|
+    player.destroy()
+  end
+  redirect '/'
+end

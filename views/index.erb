@@ -60,3 +60,7 @@
 </div>
 
 <%= erb(:winner, :locals =>{:game => @game}) %>
+
+<form action="/clear" method="post">
+  <button type="submit" class="btn btn-danger">Play Again</button>
+</form>
