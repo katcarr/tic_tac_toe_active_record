@@ -8,4 +8,10 @@
   <% else %>
       <h2>The Winner is O</h2>
   <% end %>
+<% else %>
+  <% if game.plays%2 == 0%>
+    <h2>It's X's turn</h2>
+  <% else %>
+    <h2>It's O's turn</h2>
+  <% end %>
 <%end%>

@@ -19,7 +19,9 @@ end
 post '/play' do
   space = Space.find(params.fetch("space_id").to_i)
   game = Game.all().first
-  game.play(space.x_coordinate, space.y_coordinate)
+  if game.win? == false
+    game.play(space.x_coordinate, space.y_coordinate)
+  end
   redirect '/'
 end
 
