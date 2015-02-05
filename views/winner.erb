@@ -1,7 +1,11 @@
+<% if game.plays == 9 %>
+  <h2>MEOW</h2>
+<% end %>
+
 <% if game.win? %>
   <% if game.plays%2 == 0 %>
-      <h4>The Winner is X</h4>
+      <h2>The Winner is X</h2>
   <% else %>
-      <h4>The Winner is O</h4>
+      <h2>The Winner is O</h2>
   <% end %>
 <%end%>
