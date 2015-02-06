@@ -1,0 +1,64 @@
+<h1 class = "span7 text-center">Tic Tac Toe</h1>
+
+<div class="row">
+  <div class="col-md-4 col-sm-4 box_top_left square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 3).first}) %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4 box_top_middle square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 3).first}) %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4 box_top_right square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 3).first}) %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-sm-4 box_middle_left square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 2).first}) %>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-sm-4 box_middle square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 2).first}) %>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-sm-4 box_middle_right square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 2).first}) %>
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 col-sm-4 box_bottom_left square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 1).first}) %>
+    </div>
+
+  </div>
+  <div class="col-md-4 col-sm-4 box_bottom_middle square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 1).first}) %>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4 box_bottom_right square">
+    <div>
+      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 1).first}) %>
+    </div>
+  </div>
+</div><br><br>
+
+<%= erb(:winner, :locals =>{:game => @game}) %>
+<div class= "span7 text-center">
+<form action="/clear" method="post">
+  <button type="submit" class="btn btn-danger btn-lg">Play Again</button>
+</form>
+</div>

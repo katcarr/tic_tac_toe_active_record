@@ -3,26 +3,46 @@ Bundler.require(:default)
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-
 get '/' do
-  @games = Game.all()
+erb(:index)
+end
 
-  if @games.count == 0
-    @game = Game.create()
+get '/game' do
+
+  if ComputerGame.all().first
+    @game = ComputerGame.all().first
   else
-    @game = @games.first()
+     @game = Game.all().first
   end
 
-  erb(:index)
+  erb(:game)
+end
+
+post '/computer_play' do
+  ComputerGame.create()
+  redirect '/game'
+end
+
+post '/two_player' do
+  Game.create()
+  redirect '/game'
 end
 
 post '/play' do
   space = Space.find(params.fetch("space_id").to_i)
-  game = Game.all().first
-  if game.win? == false
-    game.play(space.x_coordinate, space.y_coordinate)
+  if ComputerGame.all().first
+    game = ComputerGame.all().first
+
+    if game.play(space.x_coordinate, space.y_coordinate) == false
+      game.computerplay()
+    end
+  else
+    game = Game.all().first
+    if game.win? == false
+      game.play(space.x_coordinate, space.y_coordinate)
+    end
   end
-  redirect '/'
+  redirect '/game'
 end
 
 

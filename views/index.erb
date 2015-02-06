@@ -1,66 +1,19 @@
 <h1 class = "span7 text-center">Tic Tac Toe</h1>
-<br>
-<br>
 
-<div class="row">
-  <div class="col-md-4 col-sm-4 box_top_left square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 3).first}) %>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-4 box_top_middle square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 3).first}) %>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-4 box_top_right square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 3).first}) %>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4 col-sm-4 box_middle_left square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 2).first}) %>
-    </div>
+<div class='row'>
 
+  <div class="col-md-2 col-sm-2 col-xs-0"></div>
+  <div class="col-md-4 col-sm-4 col-xs-12 span7 text-center">
+    <form action="/computer_play" method="post">
+      <button type="submit" class="btn btn-success jumbotron btn-block">Play The Computer</button>
+    </form>
   </div>
-  <div class="col-md-4 col-sm-4 box_middle square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 2).first}) %>
-    </div>
 
+  <div class="col-md-4 col-sm-4 col-xs-12 span7 text-center">
+    <form action='/two_player' method="post">
+      <button type="submit" class="btn btn-success jumbotron btn-block">Play A Friend</button>
+    </form>
   </div>
-  <div class="col-md-4 col-sm-4 box_middle_right square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 2).first}) %>
-    </div>
+  <div class="col-md-2 col-sm-2 col-xs-0"></div>
 
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4 col-sm-4 box_bottom_left square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 1 , y_coordinate: 1).first}) %>
-    </div>
-
-  </div>
-  <div class="col-md-4 col-sm-4 box_bottom_middle square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 2 , y_coordinate: 1).first}) %>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-4 box_bottom_right square">
-    <div>
-      <%= erb(:play_button, :locals => {:game => @game, :space => @game.board.spaces.where(x_coordinate: 3 , y_coordinate: 1).first}) %>
-    </div>
-  </div>
-</div><br><br>
-
-<%= erb(:winner, :locals =>{:game => @game}) %>
-<div class= "span7 text-center">
-<form action="/clear" method="post">
-  <button type="submit" class="btn btn-danger btn-lg">Play Again</button>
-</form>
 </div>
