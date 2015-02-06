@@ -1,6 +1,20 @@
 class ComputerGame < Game
 
   def computerplay
+
+    if possible_win("O")
+      return
+    elsif possible_win("X")
+      return
+    else
+      easy_computerplay
+    end
+
+
+  end
+
+  define_method(:possible_win) do |mark|
+
     possible_wins = []
     possible_wins.push(Space.where({x_coordinate: 1}))
     possible_wins.push(Space.where({x_coordinate: 2}))
@@ -19,32 +33,32 @@ class ComputerGame < Game
     nw_diaganol.push(Space.where(x_coordinate: 3 , y_coordinate: 1).first)
     possible_wins.push(nw_diaganol)
 
-    o_marks = 0
-    computer = Player.where(mark: "O").first
+    marks = 0
     possible_wins.each do |possible_win|
       3.times do |i|
         if possible_win[i].player_id
-          if possible_win[i].player.mark = "O"
-            o_marks +=1
+          if possible_win[i].player.mark == mark
+            marks +=1
           end
         end
-        if o_marks == 2
+      end
+
+      if marks == 2
           3.times do |i|
             if possible_win[i].player_id == nil
                 space = possible_win[i]
-                space.update(player_id: computer.id)
-                return
+                self.play(space.x_coordinate, space.y_coordinate)
+                return true
             end
           end
-        else
-          easy_computerplay
-        end
       end
+
+      marks = 0
     end
 
+    false
 
   end
-
 
 
 
