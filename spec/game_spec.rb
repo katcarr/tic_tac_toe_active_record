@@ -4,6 +4,7 @@ describe Game do
   it {should have_many(:players)}
   it { should have_one(:board)}
 
+
   it("should create a X player and O player when initialized") do
     test_game = Game.create()
     expect(test_game.players.first.mark).to(eq("X"))
@@ -59,6 +60,7 @@ describe Game do
       expect(this_space.player.mark).to eq("X")
     end
   end
+
 
   describe '#turner' do
     it("alternates between X and O's turn, X is always first") do

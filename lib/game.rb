@@ -2,6 +2,7 @@ class Game <ActiveRecord::Base
   has_many(:players)
   has_one(:board)
 
+
   after_create do
 
     self.players.push(Player.create(mark: 'X'))

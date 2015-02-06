@@ -18,5 +18,7 @@ RSpec.configure do |config|
 
     Space.all.each { |space| space.destroy }
 
+    ComputerGame.all().each { |game| space.destroy }
+
   end
 end
