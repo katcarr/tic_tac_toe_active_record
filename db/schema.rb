@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20150204200404) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.integer  "board_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "turn"
+    t.integer  "board_id"
     t.integer  "plays"
   end
 
