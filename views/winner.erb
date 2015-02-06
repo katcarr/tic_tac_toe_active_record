@@ -1,8 +1,22 @@
 <% if game.plays == 9 %>
   <h2>MEOW</h2>
 
-<% else %>
+<% elsif game.type == "ComputerGame" %>
+  <% if game.win? %>
+    <% if game.plays%2 == 0 %>
+      <h2>You Win!</h2>
+    <% else %>
+      <h2>The Computer Won :()</h2>
+    <% end %>
+  <% else %>
+    <% if game.plays%2 == 0%>
+      <h2>It's your turn</h2>
+    <% else %>
+      <h2>It's the computer's turn</h2>
+    <% end %>
+  <% end %>
 
+<% else %>
   <% if game.win? %>
     <% if game.plays%2 == 0 %>
         <h2>The Winner is X</h2>
@@ -16,5 +30,5 @@
       <h2>It's O's turn</h2>
     <% end %>
   <%end%>
-  
+
 <% end %>
