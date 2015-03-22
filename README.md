@@ -53,8 +53,13 @@ $ shoulda-matchers
 Usage
 -----
 
-Upon completion of the above steps in the Installation section, open
-up your preferred web browser and enter the following address:
+Upon completion of the above steps in the Installation section in project directory run
+
+```ruby
+ruby app.rb
+```
+
+open up your preferred web browser and enter the following address:
 
 ```url
 localhost:4567/
